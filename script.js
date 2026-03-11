@@ -2,86 +2,159 @@
 //Ejercicio 1 — Formatear nombre
 
 let nombre = "VICKY";
-const resultado = nombre.slice(0,1).toUpperCase() + nombre.slice(1).toLowerCase();
-console.log("Ejercicio 1: " + resultado);
+formatearNombre(nombre);
+
+function formatearNombre(nombre)
+{
+    const resultado = nombre.slice(0,1).toUpperCase() + nombre.slice(1).toLowerCase();
+    console.log("Ejercicio 1: " + resultado);  
+}
 
 //Ejercicio 2 — Contar letras
 
-let oracion = "hola soy flor";
+let texto = "hola soy flor";
+contarLetras(texto);
 
-const cantLetras = oracion.split(" ").join("").length;
-
-console.log("Ejercicio 2: " + cantLetras + " letras.");
+function contarLetras(texto)
+{
+    
+    const cantLetras = texto.split(" ").join("").length;
+    console.log("Ejercicio 2: " + cantLetras + " letras.");
+}
 
 //Ejercicio 3 — Número mayor
 
-let n1 = 10;
-let n2 = 8;
-let n3 = 3;
+let a = 10;
+let b = 8;
+let c = 3;
+maximo(a, b, c);
 
-const maximo = max(n1, n2, n3);
-console.log("Ejercicio 3: " + maximo);
-
-function max(n1, n2, n3)
+function maximo(a, b, c)
 {
-    let max;
+    const maximo = max(a, b, c);
+    console.log("Ejercicio 3: " + maximo);
 
-    if(n1 > n2 && n1 > n3) { max = n1;}
-    else if(n2 > n1 && n2 > n3) { max = n2;}
-    else {max = n3;}
+    function max(a, b, c)
+    {
+        let max;
 
-    return max;
+        if(a > b && a > c) { max = a;}
+        else if(b > a && b > c) { max = b;}
+        else {max = c;}
+
+        return max;
+    }
 }
-
 //Ejercicio 4 — Validar password
 
 let password = "509Martes"
-const numerosPosibles = ["0","1","2","3","4","5","6","7","8","9"];
+validarPassword(password);
 
-const valida = password = password.length >= 8 && numerosPosibles.some(n => password.includes(n));
+function validarPassword(password)
+{
+    
+    const numerosPosibles = ["0","1","2","3","4","5","6","7","8","9"];
 
-let mensaje;
-if(valida){ mensaje = "La contraseña es valida."}
-else {mensaje = "La contraseña no es valida."}
+    const valida = password => password.length >= 8 && numerosPosibles.some(n => password.includes(n));
 
-console.log("Ejercicio 4: " + mensaje);
+    let mensaje;
+    if(valida){ mensaje = "La contraseña es valida."}
+    else {mensaje = "La contraseña no es valida."}
+
+    console.log("Ejercicio 4: " + mensaje);
+}
 
 //Ejercicio 5 — Suma de array
 
 let numeros = [2, 6, 3];
-let rta = 0;
+sumarArray(numeros);
 
-numeros.forEach(n => { rta = rta + n;});
-
-console.log("Ejercicio 5: " + rta);
+function sumarArray(numeros)
+{
+    let rta = 0;
+    numeros.forEach(n => { rta = rta + n;});
+    console.log("Ejercicio 5: " + rta);
+}
 
 //Ejercicio 6 — Número mayor de un array
 
 let numerosArray = [2, 14, 55, 56, 23];
-let mayor = numerosArray[0];
+mayorNumero(numerosArray);
 
-numerosArray.forEach(n => { if(n > mayor){ mayor = n;}})
-
-console.log("Ejercicio 6: " + mayor)
+function mayorNumero(numerosArray)
+{
+    let mayor = numerosArray[0];
+    numerosArray.forEach(n => { if(n > mayor){ mayor = n;}})
+    console.log("Ejercicio 6: " + mayor)
+}
 
 //Ejercicio 7 — Filtrar pares
 
 let numerosMezclados = [2, 5, 22, 24, 33];
-let numerosPares = [];
+obtenerPares(numerosMezclados);
 
-numerosPares = esPar(numerosMezclados).join(", ");
-
-function esPar(numerosMezclados)
+function obtenerPares(numeros)
 {
-    numerosMezclados.forEach(n =>
+    let numerosPares = [];
+    numerosPares = esPar(numerosMezclados).join(", ");
+    function esPar(numerosMezclados)
     {
-        if(n % 2 === 0){ numerosPares.push(n);}
+        numerosMezclados.forEach(n =>
+        {
+            if(n % 2 === 0){ numerosPares.push(n);}
+        }
+        )
+        return numerosPares;
     }
-    )
-    return numerosPares;
+    console.log("Ejercicio 7: " + numerosPares);
 }
 
-console.log("Ejercicio 7: " + numerosPares);
+//Ejercicio 8 — Descripción de usuario
+
+const usuario = 
+{ 
+    nombre: "Ana",
+    edad: 20,
+    activo: false
+}
+descripcionUsuario(usuario);
+
+function descripcionUsuario(usuario)
+{
+    const descripcion = usuario.nombre + " tiene " + usuario.edad + " años."
+    console.log("Ejercicio 8: " + descripcion);
+}
+
+//Ejercicio 9 — Activar usuario
+
+activarUsuario(usuario);
+
+function activarUsuario(usuario)
+{
+    let mensaje;
+    usuario.activo = true;
+    if(usuario.activo){ mensaje = "El usuario está activo."}
+    else {mensaje = "El usuario está inactivo."}
+
+    console.log("Ejercicio 9: " + mensaje);
+}
+
+//Ejercicio 10 — Precio total
+
+const productos = [ {nombre:"Mouse", precio:10}, {nombre:"Teclado", precio:25}, {nombre:"Monitor", precio:200} ];
+let total = 0;
+
+let calcularTotal = productos => productos.forEach(p => {total += p.precio});
+
+calcularTotal(productos);
+
+console.log("Ejercicio 10: " + total);
+
+
+
+
+
+
 
 
 
