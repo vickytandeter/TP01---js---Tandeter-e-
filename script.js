@@ -67,4 +67,21 @@ console.log("Ejercicio 6: " + mayor)
 //Ejercicio 7 — Filtrar pares
 
 let numerosMezclados = [2, 5, 22, 24, 33];
+let numerosPares = [];
+
+numerosPares = esPar(numerosMezclados).join(", ");
+
+function esPar(numerosMezclados)
+{
+    numerosMezclados.forEach(n =>
+    {
+        if(n % 2 === 0){ numerosPares.push(n);}
+    }
+    )
+    return numerosPares;
+}
+
+console.log("Ejercicio 7: " + numerosPares);
+
+
 
