@@ -17,7 +17,6 @@ contarLetras(texto)
 
 function contarLetras(texto)
 {
-    
     const cantLetras = texto.split(" ").join("").length
     console.log("Ejercicio 2: " + cantLetras + " letras.")
 }
@@ -167,8 +166,12 @@ console.log("Ejercicio 12: " + nombresMayores)
 
 //Ejercicio 13 — reduce
 
-const edades = usuarios.map( usuario => usuario.edad)
-const suma = edades.reduce((a, b) => a + b, 0);
+function sumaEdades()
+{
+    const edades = usuarios.map( usuario => usuario.edad)
+    const suma = edades.reduce((a, b) => a + b, 0);
+}
+
 
 console.log("Ejercicio 13: " + suma)
 
@@ -186,8 +189,44 @@ const productoNuevo = {...producto, stock: 5}
 
 console.log("Ejercicio 15: " + productoNuevo.stock)
 
+//Ejercicio 16 — Buscar producto 
 
+const productos2 = [ {nombre:"Remera", precio:40000}, {nombre:"Jean", precio:60000}, {nombre:"Buzo", precio:80000} ]
+const prodNombre = buscarProducto(productos2, "Jean");
 
+function buscarProducto(productos2, nombre)
+{
+    let rta = productos2.find(prod => prod.nombre === nombre) 
+    return rta
+}
+console.log("Ejercicio 16: nombre: " + prodNombre.nombre + " - precio: " + prodNombre.precio )
+
+//Ejercicio 17 — Productos caros
+
+const caros = productosCaros(productos2)
+
+function productosCaros(productos2)
+{
+    let rta = productos2.filter(prod => prod.precio > 50000) 
+    return rta
+}
+
+caros.forEach(prod => {
+    console.log("Ejercicio 17: " + prod.nombre + " - precio: " + prod.precio)
+})
+
+//Ejercicio 18 — Promedio
+
+const nums = [10, 12, 3, 2]
+let rta = promedio(nums)
+
+function promedio(nums)
+{
+    let suma = nums.reduce((a, b) => a + b, 0);
+    return suma / numeros.length;
+}
+
+console.log("Ejercicio 18: " + rta)
 
 
 
