@@ -172,6 +172,20 @@ const suma = edades.reduce((a, b) => a + b, 0);
 
 console.log("Ejercicio 13: " + suma)
 
+//Ejercicio 14 — Destructuring
+
+const producto = {nombre:"Notebook", precio:1000}
+
+const {nombre: nombreProducto, precio: precioProducto} = producto;
+
+console.log("Ejercicio 14: nombre: " + nombreProducto + " - precio: " + precioProducto)
+
+//Ejercicio 15 — Spread operator
+
+const productoNuevo = {...producto, stock: 5}
+
+console.log("Ejercicio 15: " + productoNuevo.stock)
+
 
 
 
