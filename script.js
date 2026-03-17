@@ -228,6 +228,32 @@ function promedio(nums)
 
 console.log("Ejercicio 18: " + rta)
 
+//Desafío final — Simulación de lógica de API
+
+const usuariosAPI = [{id:1, nombre:"Ana", edad:20}, {id:2, nombre:"Juan", edad:15}, {id:3, nombre:"Pedro", edad:30}]
+
+function obtenerUsuarios()
+{
+    return usuariosAPI;
+}
+
+function obtenerUsuarioPorId(id)
+{
+    const usuario = usuariosAPI.find(usuario => usuario.id = id)
+    return usuario;
+}
+
+function obtenerMayores()
+{
+    let mayores = usuariosAPI.filter(usuario => usuario.edad >= 18)
+    return mayores;
+}
+
+function crearUsuario(nombre, edad)
+{
+    let nuevoUsuario = {nombre: nombre, edad: edad}
+    usuariosAPI.push(nuevoUsuario)
+}
 
 
 
