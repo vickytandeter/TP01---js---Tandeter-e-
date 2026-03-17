@@ -170,10 +170,10 @@ function sumaEdades()
 {
     const edades = usuarios.map( usuario => usuario.edad)
     const suma = edades.reduce((a, b) => a + b, 0);
+    return suma;
 }
 
-
-console.log("Ejercicio 13: " + suma)
+console.log("Ejercicio 13: " + sumaEdades())
 
 //Ejercicio 14 — Destructuring
 
